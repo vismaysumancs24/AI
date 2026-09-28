@@ -1,0 +1,30 @@
+def vacuum_agent(location, room_A, room_B):
+
+    if location == "A":
+        if room_A == "Dirty":
+            print("A is Dirty -> Clean")
+            room_A = "Clean"
+        else:
+            print("A is Clean -> Move Right")
+            location = "B"
+
+    else:
+        if room_B == "Dirty":
+            print("B is Dirty -> Clean")
+            room_B = "Clean"
+        else:
+            print("B is Clean -> Move Left")
+            location = "A"
+
+    return location, room_A, room_B
+
+
+location = "A"
+room_A = "Dirty"
+room_B = "Dirty"
+
+for _ in range(6):
+    print(f"\nLocation: {location}, A: {room_A}, B: {room_B}")
+    location, room_A, room_B = vacuum_agent(
+        location, room_A, room_B
+    )  
